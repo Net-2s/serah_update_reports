@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="serah_report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//td[@name='td_quantity']" position="replace">
+            <td name="td_quantity" class="text-end">
+                <span t-field="line.product_uom_qty"/>
+            </td>
+        </xpath>
+        <xpath expr="//td[@name='td_taxes']" position="replace">
+        </xpath>
+        <xpath expr="//th[@name='th_taxes']" position="replace">
+        </xpath>
+        <xpath expr="//th[@name='th_description']" position="after">
+            <th name="bar_code" class="text-start">Code-barres</th>
+        </xpath>
+        <xpath expr="//td[@name='td_name']" position="after">
+            <td name="barcode"><span t-field="line.barcode"/></td>
+        </xpath>
+    </template>
+
+</odoo>

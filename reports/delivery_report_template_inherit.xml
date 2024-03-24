@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="serah_report_delivery_document_inherit" inherit_id="stock.report_delivery_document">
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[2]" position="replace">
+            <td>
+                <span t-field="move.product_uom_qty"/>
+            </td>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[3]" position="replace">
+            <td>
+                <span t-field="move.quantity_done"/>
+            </td>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[1]" position="after">
+            <td>
+                <span t-field="move.barcode"/>
+            </td>
+        </xpath>
+        <xpath expr="//th[@name='th_sm_product']" position="after">
+            <th name="th_sm_product"><strong>Code-Barres</strong></th>
+        </xpath>
+    </template>
+
+</odoo>
