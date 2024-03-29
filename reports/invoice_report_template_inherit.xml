@@ -15,4 +15,23 @@
         </xpath>
     </template>
 
+    <template id="report_invoice_document_tva" inherit_id="account.tax_groups_totals">
+        <xpath expr="//t/tr/t[2]" position="replace">
+            <t t-else="">
+                <td>
+                    <t t-if="amount_by_group['tax_group_name']">
+                        <span class="text-nowrap" t-esc="amount_by_group['tax_group_name']"/>
+                    </t>
+                    <t t-else="">
+                        <strong class="mr16">TVA</strong>
+                    </t>
+                </td>
+                <td class="text-end o_price_total">
+                    <span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']" />
+                </td>
+            </t>
+        </xpath>
+
+    </template>
+
 </odoo>
